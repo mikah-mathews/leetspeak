@@ -11,11 +11,17 @@ namespace Translator.Tests
       public void WordTurningIntoArray_True()
       {
         LeetspeakTranslator newTranslator = new LeetspeakTranslator("Bear");
-        char[] arrStr = newTranslator.ArrayMaker("Bear");
+        string arrStr = newTranslator.ArrayMaker("Bear");
         int strLength = arrStr.Length;
-        Console.WriteLine(arrStr);
-        Console.WriteLine(arrStr.Length);
         Assert.AreEqual(4, arrStr.Length);
+      }
+
+      [TestMethod]
+      public void eReplacedWith3_True()
+      {
+        LeetspeakTranslator newTranslator = new LeetspeakTranslator("Bear");
+        string arrStr = newTranslator.ArrayMaker("Bear");
+        Assert.AreEqual("B3ar", arrStr);
       }
     }
 }
